@@ -1,0 +1,122 @@
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.1/moment-with-locales.min.js"></script>
+    <script src="dist/vis.min.js"></script>
+    <link href="dist/vis.min.css" rel="stylesheet" type="text/css" />
+    <link href="dist/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+    <link href="timeLine.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="container">
+        <h2>Mapa de vuelos V1</h2>
+        <div id="visualization"></div>
+        <div class="menu">
+            <input type="button" id="zoomIn" value="Zoom in"/>
+            <input type="button" id="zoomOut" value="Zoom out"/>
+            <input type="button" id="moveLeft" value="Move left"/>
+            <input type="button" id="moveRight" value="Move right"/>
+            <input type="button" id="toggleRollingMode" value="toggleRollingMode"/><p>
+            <input type="text" id="txtFromDateTime" placeholder="From DateTime" />
+            <input type="text" id="txtToDateTime" placeholder="From DateTime" />
+            <input type="button" id="window2" value="Go">
+        </div>
+        <p>
+            <p>
+                <textarea id="dataUpdate">
+
+                </textarea>
+                <div class="buttons">
+                    <input type="button" id="update" value="&darr; Update" title="Update data from textarea">
+                </div>
+                <textarea id="data">
+                    [
+                    {
+                    "id": "0001",
+                    "content": "vuelo 1",
+                    "start": "2017-09-15T10:30:00",
+                    "end": "2017-09-15T11:00:00",
+                    "className": "green",
+                    "title": "Vuelo 0001,\nGate 30,\nProveedor Texaco"
+                },
+                {
+                "id": "0002",
+                "content": "vuelo 2",
+                "start": "2017-09-15T10:45:00",
+                "end": "2017-09-15T11:15:00",
+                "className": "green",
+                "title": "Vuelo 0002,\nGate 20,\nProveedor Terpel"
+            },
+            {
+            "id": "0003",
+            "content": "vuelo 3",
+            "start": "2017-09-15T10:50:00",
+            "end": "2017-09-15T11:15:00",
+            "className": "red",
+            "title": "Vuelo 0003,\nGate 34,\nProveedor Texaco"
+        },
+        {
+        "id": "0004",
+        "content": "vuelo 4",
+        "start": "2017-09-15T11:10:00",
+        "end": "2017-09-15T11:40:00",
+        "className": "yellow",
+        "title": "Vuelo 0004,\nGate 40,\nProveedor Terpel"
+
+    },
+    {
+    "id": "0005",
+    "content": "vuelo 5",
+    "start": "2017-09-15T11:30:00",
+    "end": "2017-09-15T12:00:00",
+    "className": "red",
+    "title": "Vuelo 0005,\nGate 13,\nProveedor Texaco"
+},
+{
+    "id": "0006",
+    "content": "vuelo 6",
+    "start": "2017-09-15T11:35:00",
+    "end": "2017-09-15T12:05:00",
+    "className": "green",
+    "title": "Vuelo 0006,\nGate 22,\nProveedor Texaco"
+},
+{
+    "id": "0007",
+    "content": "vuelo 7",
+    "start": "2017-09-15T12:00:00",
+    "end": "2017-09-15T12:20:00",
+    "className": "red",
+    "title": "Vuelo 0007,\nGate 14,\nProveedor Texaco"
+},
+{
+    "id": "0008",
+    "content": "vuelo 8",
+    "start": "2017-09-15T11:23:00",
+    "end": "2017-09-15T11:53:00",
+    "className": "red",
+    "title": "Vuelo 0008,\nGate 15,\nProveedor Terpel"
+},
+{
+    "id": "0009",
+    "content": "vuelo 9",
+    "start": "2017-09-15T11:28:00",
+    "end": "2017-09-15T11:55:00",
+    "className": "red",
+    "title": "Vuelo 0009,\nGate 23,\nProveedor Texaco"
+},
+{
+    "id": "0010",
+    "content": "vuelo 10",
+    "start": "2017-09-15T11:34:00",
+    "end": "2017-09-15T12:05:00",
+    "className": "red",
+    "title": "Vuelo 0010,\nGate 24,\nProveedor Terpel"
+}
+]
+</textarea>
+<div class="buttons">
+    <input type="button" id="load" value="&darr; Load" title="Load data from textarea into the Timeline">
+</div>
+</div>
+<script src="timeLine.js"></script>
+</body>
+</html>

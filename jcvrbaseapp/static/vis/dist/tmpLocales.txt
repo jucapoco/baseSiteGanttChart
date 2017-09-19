@@ -1,0 +1,361 @@
+locales: {
+    // create a new locale (text strings should be replaced with localized strings)
+    my: {
+      months: ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],
+      monthsShort: ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],
+      weekdays : ["domingo","lunes","martes","miércoles","jueves","viernes","sábado"],
+      weekdaysShort : ["dom","lun","mar","mié","jue","vie","sáb"],
+      weekdaysMin : ["do","lu","ma","mi","ju","vi","sá"],
+      September: "Septiembre",
+    }
+  },
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.1/moment-with-locales.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.17.0/vis.min.js" type="text/javascript"></script>
+  <link  href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.17.0/vis.min.css" rel="stylesheet" type="text/css" />
+
+
+    <script src="{% static 'vis/dist/moment-2.8.1/min/moment-with-locales.min.js"></script>
+    <script src="{% static 'vis/dist/vis.min.js' %}"></script>
+    <link href="{% static 'vis/dist/vis.min.css' %}" rel="stylesheet" type="text/css" />
+
+
+
+[
+            {
+            "id": "0001",
+            "content": "vuelo 1",
+            "start": "2017-09-14T18:30:00",
+            "end": "2017-09-14T19:00:00",
+            "className": "green",
+            "title": "&lt;table border="1"&gt;&lt;tr&gt;&lt;td&gt;Vuelo&lt;/td&gt;&lt;td&gt;0001&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Gate&lt;/td&gt;&lt;td&gt;30&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Proveedor&lt;/td&gt;&lt;td&gt;Texaco&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;"
+        },
+        {
+        "id": "0002",
+        "content": "vuelo 2",
+        "start": "2017-09-14T18:45:00",
+        "end": "2017-09-14T19:15:00",
+        "className": "green",
+        "title": "&lt;table border="1"&gt;&lt;tr&gt;&lt;td&gt;Vuelo&lt;/td&gt;&lt;td&gt;0002&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Gate&lt;/td&gt;&lt;td&gt;20&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Proveedor&lt;/td&gt;&lt;td&gt;Terpel&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;"
+    },
+    {
+        "id": "0003",
+        "content": "vuelo 3",
+        "start": "2017-09-14T18:45:00",
+        "end": "2017-09-14T19:15:00",
+        "className": "red",
+        "title": "&lt;table border="1"&gt;&lt;tr&gt;&lt;td&gt;Vuelo&lt;/td&gt;&lt;td&gt;0003&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Gate&lt;/td&gt;&lt;td&gt;34&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Proveedor&lt;/td&gt;&lt;td&gt;Texaco&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;"
+    },
+    {
+        "id": "0004",
+        "content": "vuelo 4",
+        "start": "2017-09-14T19:10:00",
+        "end": "2017-09-14T19:40:00",
+        "className": "yellow",
+        "title": "&lt;table border="1"&gt;&lt;tr&gt;&lt;td&gt;Vuelo&lt;/td&gt;&lt;td&gt;0004&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Gate&lt;/td&gt;&lt;td&gt;40&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Proveedor&lt;/td&gt;&lt;td&gt;Terpel&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;"
+    },
+    {
+        "id": "0005",
+        "content": "vuelo 5",
+        "start": "2017-09-14T19:30:00",
+        "end": "2017-09-14T20:00:00",
+        "className": "red",
+        "title": "&lt;table border="1"&gt;&lt;tr&gt;&lt;td&gt;Vuelo&lt;/td&gt;&lt;td&gt;0005&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Gate&lt;/td&gt;&lt;td&gt;13&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Proveedor&lt;/td&gt;&lt;td&gt;Texaco&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;"
+    },
+    {
+        "id": "0006",
+        "content": "vuelo 6",
+        "start": "2017-09-14T19:30:00",
+        "end": "2017-09-14T20:00:00",
+        "className": "green",
+        "title": "&lt;table border="1"&gt;&lt;tr&gt;&lt;td&gt;Vuelo&lt;/td&gt;&lt;td&gt;0006&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Gate&lt;/td&gt;&lt;td&gt;22&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Proveedor&lt;/td&gt;&lt;td&gt;Texaco&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;"
+    }
+    ]
+
+
+<script type="text/javascript">
+
+      // DOM element where the Timeline will be attached
+      var container = document.getElementById('visualization');
+      var txtData = document.getElementById('data');
+      var btnLoad = document.getElementById('load');
+
+      // Create a DataSet (allows two way data-binding)
+      var items = new vis.DataSet([
+        {id: 1, content: 'vuelo 1', start: '2017-09-14T16:30:00' , end: '2017-09-14T17:00:00', className: 'red', title: '<table border="1"><tr><td>Vuelo</td><td>0001</td></tr><tr><td>Gate</td><td>30</td></tr><tr><td>Proveedor</td><td>Texaco</td></tr></table>'},
+        {id: 2, content: 'vuelo 2', start: '2017-09-14T16:45:00' , end: '2017-09-14T17:15:00', className: 'green', title: '<table border="1"><tr><td>Vuelo</td><td>0002</td></tr><tr><td>Gate</td><td>20</td></tr><tr><td>Proveedor</td><td>Terpel</td></tr></table>'},
+        {id: 3, content: 'vuelo 3', start: '2017-09-14T16:45:00' , end: '2017-09-14T17:15:00', className: 'yellow', title: '<table border="1"><tr><td>Vuelo</td><td>0003</td></tr><tr><td>Gate</td><td>48</td></tr><tr><td>Proveedor</td><td>Texaco</td></tr></table>'}
+        ]);
+
+      // Configuration for the Timeline
+      var options = {
+          "align": "auto",
+          "direction": "horizontal",
+          "end": null,
+          "height": null,
+          "locale": "es",
+          "max": null,
+          "maxHeight": null,
+          "min": null,
+          "minHeight": null,
+          "moveable": true,
+          "orientation": {
+            "axis": "top"
+        },
+        "showCurrentTime": true,
+        "start": null,
+        "type": null,
+        "zoomable": false,
+        "width": "100%",
+        timeAxis: {scale: 'minute', step: 5},
+        "orientation": {
+            "item": "top",
+            "axis": "top",
+        },
+        tooltip: {
+          followMouse: true
+      },
+      /*"configure": true*/
+  };
+
+      // Create a Timeline
+      var timeline = new vis.Timeline(container, items, options);
+      /**
+         * Move the timeline a given percentage to left or right
+         * @param {Number} percentage   For example 0.1 (left) or -0.1 (right)
+         */
+         function move (percentage) {
+            var range = timeline.getWindow();
+            var interval = range.end - range.start;
+
+            timeline.setWindow({
+                start: range.start.valueOf() - interval * percentage,
+                end:   range.end.valueOf()   - interval * percentage
+            });
+        }
+
+        // attach events to the navigation buttons
+        document.getElementById('zoomIn').onclick    = function () { timeline.zoomIn( 0.2); };
+        document.getElementById('zoomOut').onclick   = function () { timeline.zoomOut( 0.2); };
+        document.getElementById('moveLeft').onclick  = function () { move( 0.2); };
+        document.getElementById('moveRight').onclick = function () { move(-0.2); };
+        document.getElementById('toggleRollingMode').onclick = function () { timeline.toggleRollingMode() };
+
+        function loadData () {
+        // get and deserialize the data
+        var data = JSON.parse(txtData.value);
+
+        // update the data in the DataSet
+        //
+        // Note: when retrieving updated data from a server instead of a complete
+        // new set of data, one can simply update the existing data like:
+        //
+        //   items.update(data);
+        //
+        // Existing items will then be updated, and new items will be added.
+        items.clear();
+        items.add(data);
+
+        // adjust the timeline window such that we see the loaded data
+        timeline.fit();
+    }
+    btnLoad.onclick = loadData;
+
+    loadData();
+</script>
+
+
+
+
+body {
+    font-family: sans-serif;
+    background: #ccc;
+}
+.container {
+width: 90%;
+margin: 0 auto;
+}
+.gantt-container {
+overflow: scroll;
+}
+/* custom class */
+.gantt .bar-milestone .bar-progress {
+fill: tomato;
+}
+.vis-item.red {
+color: white;
+background-color: red;
+border-color: darkred;
+}
+.vis-item.green {
+color: white;
+background-color: green;
+border-color: black;
+}
+.vis-item.yellow {
+color: black;
+background-color: yellow;
+border-color: darkred;
+}
+textarea {
+width: 800px;
+height: 200px;
+}
+
+.buttons {
+margin: 20px 0;
+}
+
+.buttons input {
+padding: 10px;
+}
+
+
+
+Update
+ [
+        {
+        "id": "0001",
+        "content": "vuelo 1",
+        "start": "2017-09-16T11:30:00",
+        "end": "2017-09-16T12:00:00",
+        "className": "green",
+        "title": "Vuelo 0001,\nGate 30,\nProveedor Texaco",
+        "vuelo": "0001",
+        "gate": "30",
+        "proveedor": "Texaco"
+    }
+]
+
+[
+        {
+        "id": "0001",
+        "content": "vuelo 1",
+        "start": "2017-09-16T11:30:00",
+        "end": "2017-09-16T12:00:00",
+        "className": "green",
+        "title": "Vuelo 0001,\nGate 30,\nProveedor Texaco",
+        "vuelo": "0001",
+        "gate": "30",
+        "proveedor": "Texaco",
+        "refuler": "XX001",
+        "operador": "Don Pedro"
+    },
+    {
+        "id": "0002",
+        "content": "vuelo 2",
+        "start": "2017-09-16T11:45:00",
+        "end": "2017-09-16T12:15:00",
+        "className": "green",
+        "title": "Vuelo 0002,\nGate 20,\nProveedor Terpel",
+        "vuelo": "0002",
+        "gate": "20",
+        "proveedor": "Texaco",
+        "refuler": "XX001",
+        "operador": "Don Pedro"
+    },
+    {
+        "id": "0003",
+        "content": "vuelo 3",
+        "start": "2017-09-16T11:50:00",
+        "end": "2017-09-16T12:15:00",
+        "className": "red",
+        "title": "Vuelo 0003,\nGate 34,\nProveedor Texaco",
+        "vuelo": "0003",
+        "gate": "34",
+        "proveedor": "Texaco",
+        "refuler": "XX001",
+        "operador": "Don Pedro"
+    },
+    {
+        "id": "0004",
+        "content": "vuelo 4",
+        "start": "2017-09-16T12:10:00",
+        "end": "2017-09-16T12:40:00",
+        "className": "yellow",
+        "title": "Vuelo 0004,\nGate 40,\nProveedor Terpel",
+        "vuelo": "0004",
+        "gate": "40",
+        "proveedor": "Texaco",
+        "refuler": "XX001",
+        "operador": "Don Pedro"
+    },
+    {
+        "id": "0005",
+        "content": "vuelo 5",
+        "start": "2017-09-16T12:30:00",
+        "end": "2017-09-16T13:13:00",
+        "className": "red",
+        "title": "Vuelo 0005,\nGate 13,\nProveedor Texaco",
+        "vuelo": "0005",
+        "gate": "13",
+        "proveedor": "Texaco",
+        "refuler": "XX001",
+        "operador": "Don Pedro"
+    },
+    {
+        "id": "0006",
+        "content": "vuelo 6",
+        "start": "2017-09-16T12:35:00",
+        "end": "2017-09-16T13:05:00",
+        "className": "green",
+        "title": "Vuelo 0006,\nGate 22,\nProveedor Texaco",
+        "vuelo": "0006",
+        "gate": "22",
+        "proveedor": "Texaco",
+        "refuler": "XX001",
+        "operador": "Don Pedro"
+    },
+    {
+        "id": "0007",
+        "content": "vuelo 7",
+        "start": "2017-09-16T13:00:00",
+        "end": "2017-09-16T13:20:00",
+        "className": "red",
+        "title": "Vuelo 0007,\nGate 14,\nProveedor Texaco",
+        "vuelo": "0007",
+        "gate": "14",
+        "proveedor": "Texaco",
+        "refuler": "XX001",
+        "operador": "Don Pedro"
+    },
+    {
+        "id": "0008",
+        "content": "vuelo 8",
+        "start": "2017-09-16T12:23:00",
+        "end": "2017-09-16T12:53:00",
+        "className": "red",
+        "title": "Vuelo 0008,\nGate 15,\nProveedor Terpel",
+        "vuelo": "0008",
+        "gate": "15",
+        "proveedor": "Texaco",
+        "refuler": "XX001",
+        "operador": "Don Pedro"
+    },
+    {
+        "id": "0009",
+        "content": "vuelo 9",
+        "start": "2017-09-16T12:28:00",
+        "end": "2017-09-16T12:55:00",
+        "className": "red",
+        "title": "Vuelo 0009,\nGate 23,\nProveedor Texaco",
+        "vuelo": "0009",
+        "gate": "23",
+        "proveedor": "Texaco",
+        "refuler": "XX001",
+        "operador": "Don Pedro"
+    },
+    {
+        "id": "0010",
+        "content": "vuelo 10",
+        "start": "2017-09-16T12:34:00",
+        "end": "2017-09-16T13:05:00",
+        "className": "red",
+        "title": "Vuelo 0010,\nGate 24,\nProveedor Terpel",
+        "vuelo": "0010",
+        "gate": "24",
+        "proveedor": "Texaco",
+        "refuler": "XX001",
+        "operador": "Don Pedro"
+    }
+]

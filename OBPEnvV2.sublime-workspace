@@ -1,0 +1,428 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"un",
+				"unescaped"
+			],
+			[
+				"html",
+				"html_parser\tstatement"
+			],
+			[
+				"u",
+				"utils"
+			],
+			[
+				"fiel_",
+				"field_name"
+			],
+			[
+				"cho",
+				"choices"
+			],
+			[
+				"fil",
+				"filter\tfunction"
+			],
+			[
+				"H",
+				"H1\tTag"
+			],
+			[
+				"ti",
+				"title\tTag"
+			],
+			[
+				"base",
+				"baseIndex\tclass"
+			],
+			[
+				"bac",
+				"backend"
+			],
+			[
+				"b",
+				"backend"
+			],
+			[
+				"soc",
+				"social_auth"
+			],
+			[
+				"re",
+				"register"
+			],
+			[
+				"page",
+				"page-wrapper"
+			],
+			[
+				"wel",
+				"welcomeText\tstatement"
+			],
+			[
+				"max",
+				"max_length"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "basesite/settings.py",
+			"settings":
+			{
+				"buffer_size": 4665,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "jcvrbaseapp/views.py",
+			"settings":
+			{
+				"buffer_size": 193,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 67.0,
+		"last_filter": "Package Control: Install Package",
+		"selected_items":
+		[
+			[
+				"Package Control: Install Package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 485.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"mport socket; socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((\"localhost\", 50431))",
+			"Package Control: Install Package",
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/basesite",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/locale",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/locale/es",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/locale/es/LC_MESSAGES"
+	],
+	"file_history":
+	[
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/jcvrbaseapp/templatetags/myfilters.py",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/locale/es/LC_MESSAGES/django.po",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/jcvrbaseapp/templates/jcvrbaseapp/header.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/jcvrbaseapp/templates/jcvrbaseapp/left-menu.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/jcvrbaseapp/templates/socialaccount/snippets/provider_list.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/jcvrbaseapp/templates/account/login.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/basesite/urls.py",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/jcvrbaseapp/templates/jcvrbaseapp/index.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/jcvrbaseapp/templates/jcvrbaseapp/base_view.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/.gitignore",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/jcvrbaseapp/templates/jcvrbaseapp/footer.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/allauth/socialaccount/providers/google/provider.py",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/allauth/templates/socialaccount/snippets/provider_list.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/allauth/locale/es/LC_MESSAGES/django.po",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/allauth/templates/account/base.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/jcvrbaseapp/static/bootstrapadmin2/dist/css/sb-admin-2.css",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/jcvrbaseapp/templates/jcvrbaseapp/header-clean.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/jcvrbaseapp/templates/jcvrbaseapp/left-menu-clean.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/jcvrbaseapp/templates/jcvrbaseapp/base.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/jcvrbaseapp/static/bootstrapadmin2/vendor/bootstrap/css/bootstrap.css",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/jcvrbaseapp/static/bootstrapadmin2/vendor/bootstrap/css/bootstrap.min.css",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/allauth/templates/account/login.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/allauth/templates/account/signup.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/allauth/templates/account/password_set.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/allauth/templates/account/password_reset_from_key_done.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/allauth/templates/account/password_reset_from_key.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/allauth/templates/account/password_reset_done.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/allauth/templates/account/password_reset.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/allauth/templates/account/password_change.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/allauth/templates/account/logout.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/jcvrbaseapp/static/bootstrapadmin2/dist/css/sb-admin-2.min.css",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/allauth/account/forms.py",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/jcvrbaseapp/static/bootstrapadmin2/pages/buttons.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/allauth/socialaccount/providers/base.py",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/allauth/socialaccount/models.py",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/allauth/models.py",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/jcvrbaseapp/templatetags/__init__.py",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/jcvrbaseapp/templates/accounts/signup.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/jcvrbaseapp/templates/accounts/logout.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/jcvrbaseapp/templates/accounts/login.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/jcvrbaseapp/models.py",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/jcvrbaseapp/urls.py",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV2/basesite/jcvrbaseapp/admin.py",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV1/basesite/babaseapp/templates/babaseapp/index.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV1/basesite/basesite/urls.py",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV1/basesite/babaseapp/urls.py",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV1/basesite/babaseapp/templates/Registration/logout.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV1/basesite/basesite/settings.py",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV1/basesite/babaseapp/templates/Registration/login.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV1/basesite/babaseapp/views.py",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV1/basesite/babaseapp/templates/Registration/base_registration.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV1/basesite/babaseapp/templates/Registration/registration_complete.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV1/basesite/babaseapp/templates/Registration/registration_form.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV1/basesite/babaseapp/templates/Registration/success.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV1/basesite/babaseapp/templates/Registration/register.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV1/basesite/babaseapp/forms.py",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV1/basesite/babaseapp/templates/registration/login-old.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV1/basesite/babaseapp/templates/registration/login.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV1/basesite/babaseapp/models.py",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV1/basesite/babaseapp/templates/babaseapp/base_view.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV1/basesite/babaseapp/templates/babaseapp/left-menu.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV1/basesite/babaseapp/templates/babaseapp/footer.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV1/basesite/babaseapp/templates/babaseapp/header.html",
+		"/Users/juancvalenciar/PyEnv/OBPEnvV1/basesite/babaseapp/templates/babaseapp/blank.html",
+		"/Users/juancvalenciar/Library/Application Support/Sublime Text 3/Packages/User/Plain text.sublime-settings"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"receiving this",
+			"to connect to their",
+			"currently",
+			"html",
+			"font-size",
+			"label",
+			"body",
+			"checkbox",
+			"label",
+			"100",
+			"700",
+			"label",
+			"700",
+			"70",
+			"#333",
+			"label",
+			"login",
+			"label",
+			"bold",
+			"label",
+			"form-group"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "basesite/settings.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4665,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2014,
+								2014
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.python - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								}
+							],
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 809.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "jcvrbaseapp/views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 193,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								111,
+								111
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.python - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								}
+							],
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "OBPEnvV2.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 224.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
