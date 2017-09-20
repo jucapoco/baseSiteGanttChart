@@ -8,8 +8,9 @@
 <script src="{% static 'vis/dist/vis.min.js' %}"></script>
 <link href="{% static 'vis/dist/vis.min.css' %}" rel="stylesheet" type="text/css" />
 <link href="{% static 'vis/dist/vis-timeline-graph2d.min.css' %}" rel="stylesheet" type="text/css" />
-<link href="{% static 'css/timeLine.css' %}" rel="stylesheet" type="text/css" />  
-
+<link href="{% static 'css/timeLine.css' %}" rel="stylesheet" type="text/css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/reconnecting-websocket/1.0.0/reconnecting-websocket.min.js"></script>
 {% endblock headscript %}
 {% block title %}{% trans 'Start page of jucapoco App' %}{% endblock %}
 {% block content %}
@@ -172,6 +173,7 @@
         <input type="button" id="load" value="&darr; Load" title="Load data from textarea into the Timeline" class="btn btn-default">
     </div>
     <script src="{% static 'js/timeLine.js' %}"></script>
+    <script src="{% static 'js/chat.js' %}"></script>
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">

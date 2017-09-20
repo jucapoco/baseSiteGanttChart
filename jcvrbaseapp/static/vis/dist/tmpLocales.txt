@@ -359,3 +359,12 @@ Update
         "operador": "Don Pedro"
     }
 ]
+
+Comandos python consumir chat:
+import websocket
+ws = websocket.WebSocket()
+ws.connect("ws://127.0.0.1:8000/chat/")
+ws.send("{\"command\":\"send\",\"room\":\"1\",\"message\":\"hola\"}")
+
+
+ws.send("{\"id\":\"0002\",\"content\":\"vuelo 1\",\"start\":\"2017-09-16T11:30:00\",\"end\":\"2017-09-16T12:00:00\",\"className\":\"yellow\",\"title\":\"Vuelo 0001, Gate 30,Proveedor Texaco\",\"vuelo\":\"0001\",\"gate\":\"30\",\"proveedor\":\"Texaco\",\"refuler\":\"XX001\",\"operador\":\"Don Pedro\"}")
