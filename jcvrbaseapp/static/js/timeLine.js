@@ -66,6 +66,7 @@ document.getElementById('zoomIn').onclick    = function () { timeline.zoomIn( 0.
 document.getElementById('zoomOut').onclick   = function () { timeline.zoomOut( 0.2); };
 document.getElementById('moveLeft').onclick  = function () { move( 0.2); };
 document.getElementById('moveRight').onclick = function () { move(-0.2); };
+document.getElementById('fitTimeline').onclick = function () { timeline.fit(); };
 
 function updateData () {
 // get and deserialize the data
@@ -103,7 +104,7 @@ for(i=0; i < data.length; i++)
 }
 
 // adjust the timeline window such that we see the loaded data
-timeline.fit();
+//timeline.fit();
 }
 
 btnUpdate.onclick = updateData;

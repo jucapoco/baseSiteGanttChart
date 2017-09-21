@@ -5,7 +5,7 @@
 {% endblock headstyle %}
 {% block headscript %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.1/moment-with-locales.min.js"></script>
-<script src="{% static 'vis/dist/vis.min.js' %}"></script>
+<script src="{% static 'vis/dist/vis.js' %}"></script>
 <link href="{% static 'vis/dist/vis.min.css' %}" rel="stylesheet" type="text/css" />
 <link href="{% static 'vis/dist/vis-timeline-graph2d.min.css' %}" rel="stylesheet" type="text/css" />
 <link href="{% static 'css/timeLine.css' %}" rel="stylesheet" type="text/css" />
@@ -22,6 +22,7 @@
             <input type="button" id="zoomOut" value="Zoom out" class="btn btn-default"/>
             <input type="button" id="moveLeft" value="Move left" class="btn btn-default"/>
             <input type="button" id="moveRight" value="Move right" class="btn btn-default"/>
+            <input type="button" id="fitTimeline" value="Fit Timeline" class="btn btn-default"/>
         </div>
     </div>
     <p></p>
@@ -41,8 +42,8 @@
             {
                 "id": "0001",
                 "content": "vuelo 1",
-                "start": "2017-09-16T11:30:00",
-                "end": "2017-09-16T12:00:00",
+                "start": "2017-09-21T14:30:00",
+                "end": "2017-09-21T15:00:00",
                 "className": "green",
                 "title": "Vuelo 0001,\nGate 30,\nProveedor Texaco",
                 "vuelo": "0001",
@@ -54,8 +55,8 @@
             {
                 "id": "0002",
                 "content": "vuelo 2",
-                "start": "2017-09-16T11:45:00",
-                "end": "2017-09-16T12:15:00",
+                "start": "2017-09-21T14:45:00",
+                "end": "2017-09-21T15:15:00",
                 "className": "green",
                 "title": "Vuelo 0002,\nGate 20,\nProveedor Terpel",
                 "vuelo": "0002",
@@ -67,8 +68,8 @@
             {
                 "id": "0003",
                 "content": "vuelo 3",
-                "start": "2017-09-16T11:50:00",
-                "end": "2017-09-16T12:15:00",
+                "start": "2017-09-21T14:50:00",
+                "end": "2017-09-21T15:15:00",
                 "className": "red",
                 "title": "Vuelo 0003,\nGate 34,\nProveedor Texaco",
                 "vuelo": "0003",
@@ -80,8 +81,8 @@
             {
                 "id": "0004",
                 "content": "vuelo 4",
-                "start": "2017-09-16T12:10:00",
-                "end": "2017-09-16T12:40:00",
+                "start": "2017-09-21T15:10:00",
+                "end": "2017-09-21T15:40:00",
                 "className": "yellow",
                 "title": "Vuelo 0004,\nGate 40,\nProveedor Terpel",
                 "vuelo": "0004",
@@ -93,8 +94,8 @@
             {
                 "id": "0005",
                 "content": "vuelo 5",
-                "start": "2017-09-16T12:30:00",
-                "end": "2017-09-16T13:13:00",
+                "start": "2017-09-21T15:30:00",
+                "end": "2017-09-21T16:13:00",
                 "className": "red",
                 "title": "Vuelo 0005,\nGate 13,\nProveedor Texaco",
                 "vuelo": "0005",
@@ -106,8 +107,8 @@
             {
                 "id": "0006",
                 "content": "vuelo 6",
-                "start": "2017-09-16T12:35:00",
-                "end": "2017-09-16T13:05:00",
+                "start": "2017-09-21T15:35:00",
+                "end": "2017-09-21T16:05:00",
                 "className": "green",
                 "title": "Vuelo 0006,\nGate 22,\nProveedor Texaco",
                 "vuelo": "0006",
@@ -119,8 +120,8 @@
             {
                 "id": "0007",
                 "content": "vuelo 7",
-                "start": "2017-09-16T13:00:00",
-                "end": "2017-09-16T13:20:00",
+                "start": "2017-09-21T16:00:00",
+                "end": "2017-09-21T16:20:00",
                 "className": "red",
                 "title": "Vuelo 0007,\nGate 14,\nProveedor Texaco",
                 "vuelo": "0007",
@@ -132,8 +133,8 @@
             {
                 "id": "0008",
                 "content": "vuelo 8",
-                "start": "2017-09-16T12:23:00",
-                "end": "2017-09-16T12:53:00",
+                "start": "2017-09-21T14:23:00",
+                "end": "2017-09-21T14:53:00",
                 "className": "red",
                 "title": "Vuelo 0008,\nGate 15,\nProveedor Terpel",
                 "vuelo": "0008",
@@ -145,8 +146,8 @@
             {
                 "id": "0009",
                 "content": "vuelo 9",
-                "start": "2017-09-16T12:28:00",
-                "end": "2017-09-16T12:55:00",
+                "start": "2017-09-21T15:28:00",
+                "end": "2017-09-21T15:55:00",
                 "className": "red",
                 "title": "Vuelo 0009,\nGate 23,\nProveedor Texaco",
                 "vuelo": "0009",
@@ -158,8 +159,8 @@
             {
                 "id": "0010",
                 "content": "vuelo 10",
-                "start": "2017-09-16T12:34:00",
-                "end": "2017-09-16T13:05:00",
+                "start": "2017-09-21T15:34:00",
+                "end": "2017-09-21T16:05:00",
                 "className": "red",
                 "title": "Vuelo 0010,\nGate 24,\nProveedor Terpel",
                 "vuelo": "0010",
