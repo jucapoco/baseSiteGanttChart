@@ -34,13 +34,13 @@ var options = {
   "type": null,
   "zoomable": false,
   "width": "100%",
-  timeAxis: {scale: 'minute', step: 5},
+  "timeAxis": {scale: 'minute', step: 5},
   "orientation": {
     "item": "top",
     "axis": "top",
   },
-  tooltip: {
-    followMouse: true
+  "tooltip": {
+    "followMouse": true
   },
   /*"configure": true*/
 };

@@ -8,10 +8,10 @@ $(function () {
     // Helpful debugging
     socket.onopen = function () {
         console.log("Connected to chat socket");
-        socket.send(JSON.stringify({
-            "command": "join",
-            "room": "1"
-        }));
+        // socket.send(JSON.stringify({
+        //     "command": "join",
+        //     "room": "1"
+        // }));
     };
     socket.onclose = function () {
         console.log("Disconnected from chat socket");
