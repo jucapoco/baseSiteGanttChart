@@ -6,6 +6,8 @@ var btnUpdate = document.getElementById('update');
 var txtDataUpdate = document.getElementById('dataUpdate');
 var txtFromDateTime = document.getElementById('txtFromDateTime');
 var txtToDateTime = document.getElementById('txtToDateTime');
+var txtFlyID = document.getElementById('txtFlyID');
+
 
 // Create a DataSet (allows two way data-binding)
 var items = new vis.DataSet([
@@ -67,6 +69,13 @@ document.getElementById('zoomOut').onclick   = function () { timeline.zoomOut( 0
 document.getElementById('moveLeft').onclick  = function () { move( 0.2); };
 document.getElementById('moveRight').onclick = function () { move(-0.2); };
 document.getElementById('fitTimeline').onclick = function () { timeline.fit(); };
+document.getElementById('btnSearchByID').onclick = function () { 
+  var ids = txtFlyID.value.split(',').map(function (value) {
+      return value.trim();
+    });
+  timeline.setSelection(ids, {focus: true}); 
+};
+
 
 function updateData () {
 // get and deserialize the data
