@@ -75,6 +75,34 @@ document.getElementById('btnSearchByID').onclick = function () {
     });
   timeline.setSelection(ids, {focus: true}); 
 };
+document.getElementById('setCurrentTime').onclick = function () { 
+  var currentTime = new Date();
+  var currHour = currentTime.getHours();
+  currHour = pad(currHour, 2);
+  var currMinutes = currentTime.getMinutes();
+  currMinutes = pad(currMinutes, 2);
+  var currDay = currentTime.getDate();
+  currDay = pad(currDay, 2);
+  var currMonth = currentTime.getMonth() + 1;
+  currMonth = pad(currMonth, 2);
+  var year = currentTime.getFullYear();
+  var strCurrFullDate = year + '-' + currMonth + '-' + currDay + 'T' + currHour + ':' + currMinutes;
+
+  var newTime = moment(newTime).add(60, 'm').toDate();
+  var newHour = newTime.getHours();
+  newHour = pad(newHour, 2);
+  var newMinutes = newTime.getMinutes();
+  newMinutes = pad(newMinutes, 2);
+  var newDay = newTime.getDate();
+  newDay = pad(newDay, 2);
+  var newMonth = newTime.getMonth() + 1;
+  newMonth = pad(newMonth, 2);
+  var newYear = newTime.getFullYear();
+  var strNewFullDate = newYear + '-' + newMonth + '-' + newDay + 'T' + newHour + ':' + newMinutes;
+
+  timeline.setWindow(strCurrFullDate, strNewFullDate, {animation: false});
+
+};
 
 
 function updateData () {
@@ -178,5 +206,11 @@ for(i=0; i < data.length; i++)
 timeline.fit();
 }
 btnLoad.onclick = loadData2;
+
+function pad(n, width, z) {
+  z = z || '0';
+  n = n + '';
+  return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+}
 
 loadData2();
