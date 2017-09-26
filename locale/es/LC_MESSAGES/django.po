@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-12 11:53-0500\n"
+"POT-Creation-Date: 2017-09-26 08:55-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: basesite/settings.py:138
+#: basesite/settings.py:142
 msgid "Espanish"
 msgstr "Español"
 
-#: basesite/settings.py:139
+#: basesite/settings.py:143
 msgid "English"
 msgstr "Inglés"
 
@@ -41,6 +41,7 @@ msgstr "Aplicación base de registro"
 
 #: jcvrbaseapp/templates/account/base.html:67
 #: jcvrbaseapp/templates/jcvrbaseapp/left-menu.html:45
+#: jcvrbaseapp/templates/jcvrbaseapp/left-menu3.html:50
 msgid "Change"
 msgstr "Cambiar"
 
@@ -243,7 +244,9 @@ msgstr "Está seguro que quiere cerrar sesión?"
 
 #: jcvrbaseapp/templates/account/logout.html:16
 #: jcvrbaseapp/templates/jcvrbaseapp/header.html:85
-#: jcvrbaseapp/templates/jcvrbaseapp/index.html:11
+#: jcvrbaseapp/templates/jcvrbaseapp/header3.html:223
+#: jcvrbaseapp/templates/jcvrbaseapp/index.html:189
+#: jcvrbaseapp/templates/jcvrbaseapp/index3.html:189
 msgid "Sign Out"
 msgstr "Cerrar sesión"
 
@@ -453,31 +456,39 @@ msgid "footer"
 msgstr "Pie de página"
 
 #: jcvrbaseapp/templates/jcvrbaseapp/header.html:89
+#: jcvrbaseapp/templates/jcvrbaseapp/header3.html:227
 msgid "Administration Console"
 msgstr "Consola de administración"
 
-#: jcvrbaseapp/templates/jcvrbaseapp/index.html:3
+#: jcvrbaseapp/templates/jcvrbaseapp/index.html:15
+#: jcvrbaseapp/templates/jcvrbaseapp/index3.html:15
 msgid "Start page of jucapoco App"
 msgstr "Página de inicio de jucapoco App"
 
-#: jcvrbaseapp/templates/jcvrbaseapp/index.html:8
+#: jcvrbaseapp/templates/jcvrbaseapp/index.html:186
+#: jcvrbaseapp/templates/jcvrbaseapp/index3.html:186
 msgid "Home Page"
 msgstr "Página de inicio"
 
-#: jcvrbaseapp/templates/jcvrbaseapp/index.html:9
+#: jcvrbaseapp/templates/jcvrbaseapp/index.html:187
+#: jcvrbaseapp/templates/jcvrbaseapp/index3.html:187
 msgid "Welcome"
 msgstr "Bienvenido"
 
 #: jcvrbaseapp/templates/jcvrbaseapp/left-menu.html:18
 #: jcvrbaseapp/templates/jcvrbaseapp/left-menu.html:24
+#: jcvrbaseapp/templates/jcvrbaseapp/left-menu3.html:23
+#: jcvrbaseapp/templates/jcvrbaseapp/left-menu3.html:29
 msgid "Home"
 msgstr "Inicio"
 
 #: jcvrbaseapp/templates/jcvrbaseapp/left-menu.html:21
+#: jcvrbaseapp/templates/jcvrbaseapp/left-menu3.html:26
 msgid "Base App"
 msgstr "Aplicación base"
 
 #: jcvrbaseapp/templates/jcvrbaseapp/left-menu.html:27
+#: jcvrbaseapp/templates/jcvrbaseapp/left-menu3.html:32
 msgid "Bootstrap view"
 msgstr "Vista Bootstrap"
 

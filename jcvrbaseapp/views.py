@@ -4,4 +4,4 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def base_view(request):
-    return render(request, 'jcvrbaseapp/index.html', {})
+    return render(request, 'jcvrbaseapp/index3.html', {})

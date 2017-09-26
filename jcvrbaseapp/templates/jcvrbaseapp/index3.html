@@ -1,0 +1,197 @@
+{% extends "jcvrbaseapp/base_view3.html" %}
+{% load staticfiles %}
+{% load i18n %}
+{% block headstyle %}
+{% endblock headstyle %}
+{% block headscript %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.1/moment-with-locales.min.js"></script>
+<script src="{% static 'vis/dist/vis.js' %}"></script>
+<link href="{% static 'vis/dist/vis.min.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'vis/dist/vis-timeline-graph2d.min.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/timeLine.css' %}" rel="stylesheet" type="text/css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/reconnecting-websocket/1.0.0/reconnecting-websocket.min.js"></script>
+{% endblock headscript %}
+{% block title %}{% trans 'Start page of jucapoco App' %}{% endblock %}
+{% block content %}
+<div class="container">
+    <h2>Mapa de vuelos V1</h2>
+    <div id="visualization">
+        <div class="form-group">
+            <input type="button" id="zoomIn" value="Zoom in" class="btn btn-default"/>
+            <input type="button" id="zoomOut" value="Zoom out" class="btn btn-default"/>
+            <input type="button" id="moveLeft" value="Move left" class="btn btn-default"/>
+            <input type="button" id="moveRight" value="Move right" class="btn btn-default"/>
+            <input type="button" id="fitTimeline" value="Fit Timeline" class="btn btn-default"/>
+            <input type="button" id="setCurrentTime" value="Set Current Time" class="btn btn-default"/>
+        </div>
+    </div>
+    <p></p>
+    <div class="form-group">
+        <input type="text" class="form-control" id="txtFromDateTime" placeholder="From DateTime Ej: AAAA-MM-ddTHH:mm" />
+        <input type="text" class="form-control" id="txtToDateTime" placeholder="To DateTime Ej: AAAA-MM-ddTHH:mm" />
+        <input type="button" id="window2" value="Go" class="btn btn-default">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" id="txtFlyID" placeholder="Fly ID" />
+        <input type="button" id="btnSearchByID" value="Search" class="btn btn-default">
+    </div>
+    </div>
+    <p></p>
+    <p></p>
+    <div class="form-group">
+        <textarea id="dataUpdate" class="form-control" rows="15"></textarea>
+        <input type="button" id="update" value="&darr; Update" title="Update data from textarea" class="btn btn-default">
+        <textarea id="data" class="form-control" rows="15">
+        [
+            {
+                "id": "0001",
+                "content": "vuelo 1",
+                "start": "2017-09-21T14:30:00",
+                "end": "2017-09-21T15:00:00",
+                "className": "green",
+                "title": "Vuelo 0001,\nGate 30,\nProveedor Texaco",
+                "vuelo": "0001",
+                "gate": "30",
+                "proveedor": "Texaco",
+                "refuler": "XX001",
+                "operador": "Don Pedro"
+            },
+            {
+                "id": "0002",
+                "content": "vuelo 2",
+                "start": "2017-09-21T14:45:00",
+                "end": "2017-09-21T15:15:00",
+                "className": "green",
+                "title": "Vuelo 0002,\nGate 20,\nProveedor Terpel",
+                "vuelo": "0002",
+                "gate": "20",
+                "proveedor": "Texaco",
+                "refuler": "XX001",
+                "operador": "Don Pedro"
+            },
+            {
+                "id": "0003",
+                "content": "vuelo 3",
+                "start": "2017-09-21T14:50:00",
+                "end": "2017-09-21T15:15:00",
+                "className": "red",
+                "title": "Vuelo 0003,\nGate 34,\nProveedor Texaco",
+                "vuelo": "0003",
+                "gate": "34",
+                "proveedor": "Texaco",
+                "refuler": "XX001",
+                "operador": "Don Pedro"
+            },
+            {
+                "id": "0004",
+                "content": "vuelo 4",
+                "start": "2017-09-21T15:10:00",
+                "end": "2017-09-21T15:40:00",
+                "className": "yellow",
+                "title": "Vuelo 0004,\nGate 40,\nProveedor Terpel",
+                "vuelo": "0004",
+                "gate": "40",
+                "proveedor": "Texaco",
+                "refuler": "XX001",
+                "operador": "Don Pedro"
+            },
+            {
+                "id": "0005",
+                "content": "vuelo 5",
+                "start": "2017-09-21T15:30:00",
+                "end": "2017-09-21T16:13:00",
+                "className": "red",
+                "title": "Vuelo 0005,\nGate 13,\nProveedor Texaco",
+                "vuelo": "0005",
+                "gate": "13",
+                "proveedor": "Texaco",
+                "refuler": "XX001",
+                "operador": "Don Pedro"
+            },
+            {
+                "id": "0006",
+                "content": "vuelo 6",
+                "start": "2017-09-21T15:35:00",
+                "end": "2017-09-21T16:05:00",
+                "className": "green",
+                "title": "Vuelo 0006,\nGate 22,\nProveedor Texaco",
+                "vuelo": "0006",
+                "gate": "22",
+                "proveedor": "Texaco",
+                "refuler": "XX001",
+                "operador": "Don Pedro"
+            },
+            {
+                "id": "0007",
+                "content": "vuelo 7",
+                "start": "2017-09-21T16:00:00",
+                "end": "2017-09-21T16:20:00",
+                "className": "red",
+                "title": "Vuelo 0007,\nGate 14,\nProveedor Texaco",
+                "vuelo": "0007",
+                "gate": "14",
+                "proveedor": "Texaco",
+                "refuler": "XX001",
+                "operador": "Don Pedro"
+            },
+            {
+                "id": "0008",
+                "content": "vuelo 8",
+                "start": "2017-09-21T14:23:00",
+                "end": "2017-09-21T14:53:00",
+                "className": "red",
+                "title": "Vuelo 0008,\nGate 15,\nProveedor Terpel",
+                "vuelo": "0008",
+                "gate": "15",
+                "proveedor": "Texaco",
+                "refuler": "XX001",
+                "operador": "Don Pedro"
+            },
+            {
+                "id": "0009",
+                "content": "vuelo 9",
+                "start": "2017-09-21T15:28:00",
+                "end": "2017-09-21T15:55:00",
+                "className": "red",
+                "title": "Vuelo 0009,\nGate 23,\nProveedor Texaco",
+                "vuelo": "0009",
+                "gate": "23",
+                "proveedor": "Texaco",
+                "refuler": "XX001",
+                "operador": "Don Pedro"
+            },
+            {
+                "id": "0010",
+                "content": "vuelo 10",
+                "start": "2017-09-21T15:34:00",
+                "end": "2017-09-21T16:05:00",
+                "className": "red",
+                "title": "Vuelo 0010,\nGate 24,\nProveedor Terpel",
+                "vuelo": "0010",
+                "gate": "24",
+                "proveedor": "Texaco",
+                "refuler": "XX001",
+                "operador": "Don Pedro"
+            }
+        ]
+        </textarea>
+        <input type="button" id="load" value="&darr; Load" title="Load data from textarea into the Timeline" class="btn btn-default">
+    </div>
+    <script src="{% static 'js/timeLine.js' %}"></script>
+    <script src="{% static 'js/chat.js' %}"></script>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">{% trans 'Home Page' %}</h1>
+                <p>{% trans 'Welcome' %} {{ user.username }} !!!</p>
+                {% if user.is_authenticated %}
+                <a href="{% url 'account_logout' %}">{% trans 'Sign Out' %}</a>
+                {% endif %}
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+</div>
+{% endblock content %}
