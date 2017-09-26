@@ -1,0 +1,6 @@
+# Ignorados #
+###################
+basesite/apache
+basesite/apache/__init__.py
+basesite/apache/wsgi.py
+basesite/apache/override.py
