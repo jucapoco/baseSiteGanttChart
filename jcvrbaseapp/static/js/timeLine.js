@@ -120,23 +120,30 @@ var itemsUpdate = new vis.DataSet();
 var itemUpdate;
 var currItem
 itemsUpdate.add(data);
-var content;
-var title;
+var contentStr;
+var titleStr;
 for(i=0; i < data.length; i++)
 {
-  title = '<table border="1"><tr><td><b>Vuelo</b></td><td>';
-  title += data[i].vuelo + '</td></tr><tr><td><b>Gate</b></td><td>';
-  title += data[i].gate + '</td></tr><tr><td><b>Proveedor</b></td><td>';
-  title += data[i].proveedor + '</td></tr>';
-  title += '<tr><td><b>Refuler</b></td><td>' + data[i].refuler + '</td></tr>'
-  title += '<tr><td><b>Operador</b></td><td>' + data[i].operador + '</td></tr></table>'
-  content = data[i].content + ' <a href="http://visjs.org" target="_blank">Asignar</a>';
+  titleStr = '<table border="1"><tr><td><b>Vuelo</b></td><td>';
+  titleStr += data[i].vuelo + '</td></tr><tr><td><b>Gate</b></td><td>';
+  titleStr += data[i].gate + '</td></tr><tr><td><b>Proveedor</b></td><td>';
+  titleStr += data[i].proveedor + '</td></tr>';
+  titleStr += '<tr><td><b>Refuler</b></td><td>' + data[i].refuler + '</td></tr>'
+  titleStr += '<tr><td><b>Operador</b></td><td>' + data[i].operador + '</td></tr></table>'
+  contentStr = data[i].content + ' <a href="http://visjs.org" target="_blank">Asignar</a>';
+
+  currItem = null;
   currItem = items.get(data[i].id);
+  if(currItem == null)
+  {
+    items.add({ id: data[i].id, content: contentStr, start: data[i].start, end: data[i].end, className: data[i].className, title:  titleStr});
+    currItem = items.get(data[i].id);
+  }
   currItem.start = data[i].start;
   currItem.end = data[i].end;
-  currItem.content = content;
+  currItem.content = contentStr;
   currItem.className = data[i].className;
-  currItem.title = title;
+  currItem.title = titleStr;
   items.update(currItem);
 }
 
